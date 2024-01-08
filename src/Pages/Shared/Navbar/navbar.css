@@ -1,0 +1,24 @@
+.custom-menu li{
+    position: relative;
+    background-color: brown;
+    padding: 10px;
+    margin: 2px 0px;
+    border-bottom: 1px solid gray;
+}
+/* .submenu{
+    position: absolute;
+
+} */
+
+.submenu{
+    display: none;
+}
+.submenu2{
+    display: none;
+}
+.custom-menu li:hover > .submenu{
+    display: block;
+}
+.submenu li:hover > .submenu2{
+    display: block;
+}
