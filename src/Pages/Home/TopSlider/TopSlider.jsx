@@ -48,7 +48,7 @@ const TopSlider = () => {
   }, [currentIndex]);
 
   return (
-    <div className="h-[580px] w-full m-auto py-10 px-4 ">
+    <div className="h-[580px] w-full m-auto py-10 ">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500 relative"

@@ -10,12 +10,38 @@ import { CiSearch } from "react-icons/ci";
 import { FiPhoneCall } from "react-icons/fi";
 import { GiShoppingBag } from "react-icons/gi";
 import "./navbar.css";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  // const [isSticky, setIsSticky] = useState(false);
+  // const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+
+  //     if (scrollPosition > prevScrollPos) {
+  //       // Scrolling down
+  //       setIsSticky(true);
+  //     } else {
+  //       // Scrolling up
+  //       setIsSticky(false);
+  //     }
+
+  //     setPrevScrollPos(scrollPosition);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos]);
+  //{`mt-12  ${isSticky ? 'sticky top-0 z-10 bg-base-100' : ''}`}
   return (
-    <div className="mt-12 px-6 ">
+    <div className={`mt-12  relative`}>
       {/* section 1 sub-nav*/}
-      <section>
+      <section className={`px-6 `}>
         <div className="flex justify-between border-b-2">
           <ul className="flex px-1 uppercase lg:text-[11px]">
             <li className="border-r-2 p-3">newslatter</li>
@@ -33,7 +59,7 @@ const Navbar = () => {
         </div>
       </section>
       {/* section 2 main nav with logo */}
-      <section className="my-4">
+      <section className={`my-4 px-6 `}>
         <div className="grid grid-cols-8 items-center">
           <div className="col-span-2">
             <img className="w-56" src={logo} alt="" />
@@ -72,205 +98,204 @@ const Navbar = () => {
         </div>
       </section>
       {/* section 3 product menu and link  */}
-      <section className="py-4">
+     <section  className=" px-6">
         <div className="grid grid-cols-9 items-center">
-          <div className="col-span-2 dropdown dropdown-hover uppercase text-[12px] font-bold">
-            <div
-              tabIndex={0}
-              className=" w-full bg-orange-500 px-2 py-4 flex items-center justify-between cursor-pointer rounded-lg rounded-b-none "
-            >
-              <IoMdMenu className="text-2xl" />
-              <p>browser categories</p>
-              <IoIosArrowDown className="text-xl text-gray-600" />
+          <div className="col-span-2">
+            <div className="hover-menu relative w-full">
+              <div className=" bg-orange-500 flex items-center justify-between px-2 py-4 rounded-t-lg uppercase font-bold text-xs">
+                <IoMdMenu className="text-2xl" />
+                <p>browser categories</p>
+                <IoIosArrowDown className="text-xl text-gray-600" />
+              </div>
+              <ul className="bg-base-100 menuitem absolute z-10 w-full shadow-md rounded-b-lg font-bold text-sm text-gray-600">
+                <li className="hover:bg-gray-200 p-3  border-b">
+                  <div className="flex justify-between">
+                    <p>Makeup</p>
+                    <IoIosArrowForward />
+                  </div>
+                  <ul className="bg-base-100  submenu absolute left-full top-0 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                    <li className="hover:bg-gray-200 p-3  border-b">
+                      <div className="flex justify-between">
+                        <p>Face Makeup</p>
+                        <IoIosArrowForward />
+                      </div>
+                      <ul className="bg-base-100  submenu2 absolute left-full top-2 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                        <li className="hover:bg-gray-200 p-3  border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b relative">
+                      <div className="flex justify-between">
+                        <p>Eye Makeup</p>
+                        <IoIosArrowForward />
+                      </div>
+                      <ul className="bg-base-100  submenu2 absolute left-full top-2 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                        <li className="hover:bg-gray-200 p-3  border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b relative">
+                      <div className="flex justify-between">
+                        <p>Lip Makeup</p>
+                        <IoIosArrowForward />
+                      </div>
+                      <ul className="bg-base-100  submenu2 absolute left-full top-2 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                        <li className="hover:bg-gray-200 p-3  border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b relative">
+                      <div className="flex justify-between">
+                        <p>Tools</p>
+                        <IoIosArrowForward />
+                      </div>
+                      <ul className="bg-base-100  submenu2 absolute left-full top-2 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                        <li className="hover:bg-gray-200 p-3  border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                        <li className="hover:bg-gray-200 p-3 border-b">
+                          <Link to={"/"}>Face Primer</Link>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b relative">
+                  <div className="flex justify-between">
+                    <p>Bath & Beauty</p>
+                    <IoIosArrowForward />
+                  </div>
+                  <ul className="bg-base-100  submenu absolute left-full top-0 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                    <li className="hover:bg-gray-200 p-3  border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b relative">
+                  <div className="flex justify-between">
+                    <p>Here Care</p>
+                    <IoIosArrowForward />
+                  </div>
+                  <ul className="bg-base-100  submenu absolute left-full top-0 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                    <li className="hover:bg-gray-200 p-3  border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b relative">
+                  <div className="flex justify-between">
+                    <p>Health & Beauty</p>
+                    <IoIosArrowForward />
+                  </div>
+                  <ul className="bg-base-100  submenu absolute left-full top-0 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                    <li className="hover:bg-gray-200 p-3  border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b relative">
+                  <div className="flex justify-between">
+                    <p>Skin Care</p>
+                    <IoIosArrowForward />
+                  </div>
+                  <ul className="bg-base-100  submenu absolute left-full top-0 z-10 w-full shadow-md rounded-lg font-bold text-sm text-gray-600">
+                    <li className="hover:bg-gray-200 p-3  border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 p-3 border-b">
+                      <Link to={"/"}>Face Primer</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b">
+                  <Link to={"/"}>Electronics</Link>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b">
+                  <Link to={"/"}>Accessories</Link>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b">
+                  <Link to={"/"}>Kids & Baby</Link>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b">
+                  <Link to={"/"}>Fashion</Link>
+                </li>
+                <li className="hover:bg-gray-200 p-3 border-b">
+                  <Link to={"/"}>Perfume</Link>
+                </li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg rounded-t-none w-full custom-menu"
-            >
-              <li>
-                <div className="flex justify-between">
-                  <p>Makeup</p>
-                  <IoIosArrowForward />
-                </div>
-                <ul className=" submenu bg-base-100 w-full absolute left-[90%] rounded-lg">
-                  <li>
-                    <div className="flex justify-between">
-                      <p>Face Makeup</p>
-                      <IoIosArrowForward />
-                    </div>
-                    <ul className="absolute   submenu2 left-[90%] top-2 w-full rounded-lg bg-base-100">
-                      <li>
-                        <a href="">face primer</a>
-                      </li>
-                      <li>
-                        <a href="">foundation</a>
-                      </li>
-                      <li>
-                        <a href="">pressed powder</a>
-                      </li>
-                      <li>
-                        <a href="">bb brush</a>
-                      </li>
-                      <li>
-                        <a href="">etc</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div className="flex justify-between">
-                      <p>eye Makeup</p>
-                      <IoIosArrowForward />
-                    </div>
-                    <ul className="absolute   submenu2 left-[90%] top-2 w-full rounded-lg bg-base-100">
-                      <li>
-                        <a href="">face primer</a>
-                      </li>
-                      <li>
-                        <a href="">foundation</a>
-                      </li>
-                      <li>
-                        <a href="">pressed powder</a>
-                      </li>
-                      <li>
-                        <a href="">bb brush</a>
-                      </li>
-                      <li>
-                        <a href="">etc</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div className="flex justify-between">
-                      <p>lip Makeup</p>
-                      <IoIosArrowForward />
-                    </div>
-                    <ul className="absolute   submenu2 left-[90%] top-2 w-full rounded-lg bg-base-100">
-                      <li>
-                        <a href="">face primer</a>
-                      </li>
-                      <li>
-                        <a href="">foundation</a>
-                      </li>
-                      <li>
-                        <a href="">pressed powder</a>
-                      </li>
-                      <li>
-                        <a href="">bb brush</a>
-                      </li>
-                      <li>
-                        <a href="">etc</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div className="flex justify-between">
-                      <p>tools</p>
-                      <IoIosArrowForward />
-                    </div>
-                    <ul className="absolute   submenu2 left-[90%] top-2 w-full rounded-lg bg-base-100">
-                      <li>
-                        <a href="">face primer</a>
-                      </li>
-                      <li>
-                        <a href="">foundation</a>
-                      </li>
-                      <li>
-                        <a href="">pressed powder</a>
-                      </li>
-                      <li>
-                        <a href="">bb brush</a>
-                      </li>
-                      <li>
-                        <a href="">etc</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <div className="flex justify-between">
-                  <p>bath & body</p>
-                  <IoIosArrowForward />
-                </div>
-                <ul className="submenu bg-base-100 w-full absolute left-[90%] rounded-lg">
-                  <li>
-                    <a href="">face cream</a>
-                  </li>
-                  <li>
-                    <a href="">face wash</a>
-                  </li>
-                  <li>
-                    <a href="">face mask</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <div className="flex justify-between">
-                  <p>hair care</p>
-                  <IoIosArrowForward />
-                </div>
-                <ul className="submenu bg-base-100 w-full absolute left-[90%] rounded-lg">
-                  <li>
-                    <a href="">face cream</a>
-                  </li>
-                  <li>
-                    <a href="">face wash</a>
-                  </li>
-                  <li>
-                    <a href="">face mask</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <div className="flex justify-between">
-                  <p>Health & beauty</p>
-                  <IoIosArrowForward />
-                </div>
-                <ul className="submenu bg-base-100 w-full absolute left-[90%] rounded-lg">
-                  <li>
-                    <a href="">face cream</a>
-                  </li>
-                  <li>
-                    <a href="">face wash</a>
-                  </li>
-                  <li>
-                    <a href="">face mask</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <div className="flex justify-between">
-                  <p>skin care</p>
-                  <IoIosArrowForward />
-                </div>
-                <ul className="submenu bg-base-100 w-full absolute left-[90%] rounded-lg">
-                  <li>
-                    <a href="">face cream</a>
-                  </li>
-                  <li>
-                    <a href="">face wash</a>
-                  </li>
-                  <li>
-                    <a href="">face mask</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-              <a href="Electronics"></a>
-              </li>
-              <li>
-              <a href="accessories"></a>
-              </li>
-              <li>
-              <a href="kids & baby"></a>
-              </li>
-              <li>
-              <a href="fashion"></a>
-              </li>
-            </ul>
           </div>
           <div className="col-span-5 justify-start">
-            <ul className="flex uppercase text-[12px] font-bold">
+            <ul className="flex uppercase text-xs font-bold">
               <li className="border-e px-2 ">all product</li>
               <li className="border-e px-2 ">brand</li>
               <li className="border-e px-2 ">combo</li>
@@ -280,7 +305,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="col-span-2 ">
-            <div className="flex items-center uppercase text-[12px] font-bold">
+            <div className="flex items-center uppercase text-xs font-bold">
               <p className=" px-2 ">low price</p>
               <div className=" px-2 flex items-center">
                 <p className="text-3xl mr-2 text-gray-300">
