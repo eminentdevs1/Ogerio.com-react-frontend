@@ -1,0 +1,6 @@
+.img-side {
+  display: none;
+}
+.img-main:hover .img-side {
+  display: block;
+}

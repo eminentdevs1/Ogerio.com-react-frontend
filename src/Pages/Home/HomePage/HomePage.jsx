@@ -2,6 +2,8 @@ import BiggestSaleYear from "../BiggestSaleYear/BiggestSaleYear";
 import FeaturedCategory from "../FeaturedCategory/FeaturedCategory";
 import HotDeals from "../HotDeals/HotDeals";
 import MostPopularMakeup from "../MostPopularMakeup/MostPopularMakeup";
+import MostPopularSkinCare from "../MostPopularSkinCare/MostPopularSkinCare";
+import OnlyForYou from "../OnlyForYou/OnlyForYou";
 import TopSlider from "../TopSlider/TopSlider";
 
 const HomePage = () => {
@@ -21,6 +23,12 @@ const HomePage = () => {
       </section>
       <section>
         <MostPopularMakeup/>
+      </section>
+      <section>
+        <MostPopularSkinCare/>
+      </section>
+      <section>
+        <OnlyForYou/>
       </section>
     </div>
   );

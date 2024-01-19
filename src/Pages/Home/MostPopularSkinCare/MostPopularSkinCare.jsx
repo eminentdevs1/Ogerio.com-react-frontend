@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { CiCircleMinus, CiStar } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
 import { useState } from "react";
-import "./makeup.css";
+import "../MostPopularMakeup/makeup.css";
 import { IoIosGitCompare } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { MdFavoriteBorder } from "react-icons/md";
 
-const MostPopularMakeup = () => {
+const MostPopularSkinCare = () => {
   const [itemQuantities, setItemQuantities] = useState({});
   const [hoveredItemId, setHoveredItemId] = useState(null);
 
@@ -116,10 +116,10 @@ const MostPopularMakeup = () => {
   return (
     <div className="py-6 ">
       <h2 className=" font-bold tracking-wide text-2xl mt-2 mb-4 text-gray-600">
-        MOST POPULAR MAKEUP ITEM
+        MOST POPULAR SKIN CARE
       </h2>
       <p className="w-full h-[2px]  bg-gray-400">
-        <hr className="border-b-[1.5px]  border-orange-500 w-[370px]" />
+        <hr className="border-b-[1.5px]  border-orange-500 w-[330px]" />
       </p>
 
       <div className="grid grid-cols-4 gap-6 items-center mt-9">
@@ -213,4 +213,4 @@ const MostPopularMakeup = () => {
   );
 };
 
-export default MostPopularMakeup;
+export default MostPopularSkinCare;
