@@ -17,3 +17,9 @@
 .submenu li:hover > .submenu2{
     display: block;
 }
+
+.pst {
+    position: fixed;
+  top: 0;
+  z-index: 100; 
+  }
